@@ -16,11 +16,13 @@ It provides rich, human-written descriptions ideal for training and evaluating i
 The model consists of two main parts:
 
 **1. Feature Extraction Module**
+
 -Utilizes a pretrained DenseNet201 backbone (trained on ImageNet) with the classification head removed.
 
 -The output is a fixed-size 1920-dimensional feature vector representing high-level semantic information of the image.
 
 **2. Caption Generation Module**
+
 -The input caption sequences are tokenized and embedded using an Embedding layer that maps each word index to a dense vector representation.
 
 -The embedded captions are concatenated with the image features to form a joint input representation.

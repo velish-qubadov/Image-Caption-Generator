@@ -2,7 +2,6 @@
 This system generates descriptive captions for images using a deep learning architecture that combines:
 
 1.A pretrained DenseNet201 convolutional neural network for image feature extraction
-
 2.An LSTM-based sequence generator for caption generation
 
 The solution includes a user-friendly Streamlit interface for local deployment and testing.

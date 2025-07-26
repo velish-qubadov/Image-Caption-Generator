@@ -1,6 +1,11 @@
 # Image-Caption-Generator
-This project generates descriptive captions for images using a combination of a pretrained DenseNet201 feature extractor and an LSTM-based caption generator implemented with TensorFlow/Keras.
-A simple Streamlit interface allows users to upload images and get caption predictions locally.
+This system generates descriptive captions for images using a deep learning architecture that combines:
+
+1.A pretrained DenseNet201 convolutional neural network for image feature extraction
+
+2.An LSTM-based sequence generator for caption generation
+
+The solution includes a user-friendly Streamlit interface for local deployment and testing.
 
 ## Dataset 
 This project uses the dataset [Flickr 8k Dataset](https://www.kaggle.com/datasets/adityajn105/flickr8k) from Kaggle.

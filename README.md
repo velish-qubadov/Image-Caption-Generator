@@ -1,11 +1,8 @@
 # Image-Caption-Generator
-This system generates descriptive captions for images using a deep learning architecture that combines:
-
-1.A pretrained DenseNet201 convolutional neural network for image feature extraction
-
-2.An LSTM-based sequence generator for caption generation
-
-The solution includes a user-friendly Streamlit interface for local deployment and testing.
+## Project Overview
+This project generates descriptive captions for images using a deep learning model built with TensorFlow/Keras.
+It combines a pretrained DenseNet201 for extracting image features and an LSTM network for generating relevant text descriptions.
+A simple Streamlit interface allows users to upload images and get caption predictions locally.
 
 ## Dataset 
 This project uses the dataset [Flickr 8k Dataset](https://www.kaggle.com/datasets/adityajn105/flickr8k) from Kaggle.
@@ -18,13 +15,19 @@ It provides rich, human-written descriptions ideal for training and evaluating i
 ## Model Architecture
 The model consists of two main parts:
 
-**1.Feature Extractor:**
-We use a pre-trained DenseNet201 model (without its top classification layer) to extract image features. These features capture rich visual information from input images.
+**1. Feature Extraction Module**
+-Utilizes a pretrained DenseNet201 backbone (trained on ImageNet) with the classification head removed.
 
-**2.Caption Generator:**
-The extracted image features are passed through a dense layer and reshaped, then concatenated with embedded caption sequences.
-This combined input is processed by an LSTM network, which generates captions word-by-word.
-The output is a softmax layer that predicts the next word in the sequence.
+-The output is a fixed-size 1920-dimensional feature vector representing high-level semantic information of the image.
+
+**2. Caption Generation Module**
+-The input caption sequences are tokenized and embedded using an Embedding layer that maps each word index to a dense vector representation.
+
+-The embedded captions are concatenated with the image features to form a joint input representation.
+
+-This combined input is fed into an LSTM (Long Short-Term Memory) network which models the temporal dependencies and generates hidden states for each word position.
+
+-A Dense layer with softmax activation is applied at each time step to predict the probability distribution over the vocabulary for the next word in the sequence.
 
 ## Streamlit
 ![Streamlit prediction](assest/Streamlit_pred.png)

@@ -12,15 +12,17 @@ It provides rich, human-written descriptions ideal for training and evaluating i
 
 ## Model Architecture
 The model consists of two main parts:
+
 **1.Feature Extractor:**
 We use a pre-trained DenseNet201 model (without its top classification layer) to extract image features. These features capture rich visual information from input images.
+
 **2.Caption Generator:**
 The extracted image features are passed through a dense layer and reshaped, then concatenated with embedded caption sequences.
 This combined input is processed by an LSTM network, which generates captions word-by-word.
 The output is a softmax layer that predicts the next word in the sequence.
 
 ## Streamlit
-![Streamlit prediction](assets/Streamlit_pred.png)
+![Streamlit prediction](assest/Streamlit_pred.png)
 
 ## Installation
 1.Clone the repository:
